@@ -28,29 +28,3 @@ This project is mostly the default laravel template. It has had passport authent
 For your convenience a local configuration and database have been provided (.env and database/database.sqlite)
 
 You should be able to run this project by first running `composer install` to install dependencies and then `php artisan serve` to start the local server at http://localhost:8000
-
-A user account has been generated for you with email "rick@xdimin.dim" and password "password".
-
-Default Oauth clients have been generated
-
-Personal access client\
-Client ID: 1\
-Client secret: JQsOEU55jzJaArvbZD7goNPvEaiZGxIvi7oiKo5Y
-
-Password grant client\
-Client ID: 2\
-Client secret: BhSCifkbuoDsPBqxLryQ5StnEBDoiRT15B5Z4bMh
-
-To demonstrate an authentication flow you may make a POST request to http://localhost:8000/oauth/token with the `Content-Type` header set to `application/json` and body set to 
-``` 
-{
-   "grant_type":"password",
-   "client_id":"2",
-   "client_secret":"BhSCifkbuoDsPBqxLryQ5StnEBDoiRT15B5Z4bMh",
-   "username":"rick@xdimin.dim",
-   "password":"password",
-   "scope":""
-}
-```
-
-then you can make a GET request to http://localhost:8000/api/users with the `Authorization` header set to `Bearer <access token>` where the access token is the value returned from the first request. This will get a list of all users.
